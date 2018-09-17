@@ -31,7 +31,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl enable mongod.service
 $ sudo systemctl restart mongod.service
 ```
-Elasticsearch
+## Elasticsearch
 
 Graylog 2.4.x should be used with Elasticsearch 5.x, please follow the installation instructions from the Elasticsearch installation guide:
 
@@ -56,7 +56,7 @@ $ sudo systemctl restart elasticsearch.service
 
 ```
 
-Graylog
+## Graylog
 
 Now install the Graylog repository configuration and Graylog itself with the following commands:
 
