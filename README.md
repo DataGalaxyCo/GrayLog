@@ -66,7 +66,7 @@ $ sudo dpkg -i graylog-2.4-repository_latest.deb
 $ sudo apt-get update && sudo apt-get install graylog-server
 ```
 
-Follow the instructions in your `/etc/graylog/server/server.conf` and add password_secret and root_password_sha2. These settings are mandatory and without them, Graylog will not start!
+Follow the instructions in your `/etc/graylog/server/server.conf` and add `password_secret` and `root_password_sha2`. These settings are mandatory and without them, Graylog will not start!
 
 You need to use the following command to create your `root_password_sha2`:
 
@@ -74,8 +74,23 @@ You need to use the following command to create your `root_password_sha2`:
 echo -n yourpassword | sha256sum
 ```
 
-To be able to connect to Graylog you should set rest_listen_uri and web_listen_uri to the public host name or a public IP address of the machine you can connect to. More information about these settings can be found in Configuring the web interface.
+and put hash password in `password_secret` and `root_password_sha2` .
 
+
+To be able to connect to Graylog you should set `rest_listen_uri` and `web_listen_uri` to the public host name or a public IP address of the machine you can connect to. More information about these settings can be found in Configuring the web interface.
+
+here is an example:
+
+```
+rest_listen_uri = http://192.168.100.100:12900/api/
+web_listen_uri = http://192.168.100.100:9000/
+```
+
+and uncomment this line :
+
+```
+root_timezone = UTC
+```
 
 The last step is to enable Graylog during the operating system’s startup:
 
